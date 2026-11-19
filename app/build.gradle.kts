@@ -1,33 +1,12 @@
-plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+android {
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
 }
 
-android {
-    namespace = "com.cart3r.demolocker"
-
-    compileSdk = 35
-
-    defaultConfig {
-        applicationId = "com.cart3r.demolocker"
-
-        minSdk = 23
-        targetSdk = 35
-
-        versionCode = 1
-        versionName = "1.0"
-
-        externalNativeBuild {
-            cmake {
-                cppFlags += "-std=c++17"
-            }
-        }
-    }
-
-    externalNativeBuild {
-        cmake {
-            path = file("src/main/cpp/CMakeLists.txt")
-            version = "3.22.1"
-        }
+kotlin {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
