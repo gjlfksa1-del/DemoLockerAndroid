@@ -1,4 +1,4 @@
-name: Build Android APK
+бname: Build Android APK
 
 'on':
   workflow_dispatch:
@@ -42,4 +42,3 @@ jobs:
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 7
-``` [❶](code://python)
